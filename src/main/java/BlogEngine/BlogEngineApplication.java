@@ -1,4 +1,4 @@
-package com.example.BlogEngine;
+package BlogEngine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
