@@ -1,27 +1,24 @@
 package BlogEngine.models;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
 public class PostVotes {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(name = "user_id")
+    private int userId;
 
-    private User user;
+    @Column(name = "post_id")
+    private int postId;
 
-
-    private Post post;
-
-
-    private LocalDateTime time;
-
+    private long time;
 
     private byte value;
 

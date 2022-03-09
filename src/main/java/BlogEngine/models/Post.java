@@ -1,45 +1,41 @@
 package BlogEngine.models;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @Entity
 public class Post {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(name = "is_active")
+    private boolean isActive;
 
-    private boolean is_active;
+    @Column(name = "moderation_status")
+    private ModerationStatus moderationStatus;
 
+    @Column(name = "moderator_id")
+    private int moderatorId;
 
-    private ModerationStatus moderation_status;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private int moderator_id;
-
-
-    private int user_id;
-
-
-    private LocalDateTime time;
-
+    private long time;
 
     private String title;
 
-
     private String text;
 
+    private int viewCount;
 
-    private int view_count;
-
-
-    private List<PostVotes> postVotes;
-
-
-    private List<Tag> tags;
+//    @OneToMany
+//    private List<PostVotes> postVotes;
+//
+//    @ManyToMany
+//    private List<Tag> tags;
 }

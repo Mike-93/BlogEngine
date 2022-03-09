@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS "users"
     is_moderator    boolean NOT NULL,
     reg_time        BIGINT NOT NULL,
     name            VARCHAR(255) NOT NULL,
-    e_mail          VARCHAR(255) NOT NULL,
+    email           VARCHAR(255) NOT NULL,
     password        VARCHAR(255) NOT NULL,
     code            VARCHAR(255),
     photo           TEXT,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS "posts"
     time                BIGINT NOT NULL,
     title               VARCHAR(255) NOT NULL,
     text                TEXT NOT NULL,
-    view_count          INT NOT NULL,
+    view_count          INT,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS "post_comments"
     post_id     INT NOT NULL,
     user_id     INT NOT NULL,
     time        BIGINT NOT NULL,
-    text TEXT   NOT NULL,
+    text        TEXT NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (parent_id) REFERENCES post_comments (id) ON DELETE CASCADE,
     FOREIGN KEY (post_id) REFERENCES posts (id) ON DELETE CASCADE,

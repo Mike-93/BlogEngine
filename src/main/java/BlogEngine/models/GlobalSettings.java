@@ -1,6 +1,5 @@
 package BlogEngine.models;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -12,14 +11,13 @@ import javax.persistence.Id;
 @Entity
 public class GlobalSettings {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
 
     private String code;
 
-
     private String name;
-
 
     private String value;
 }

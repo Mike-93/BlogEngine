@@ -1,6 +1,5 @@
 package BlogEngine.models;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,12 +9,15 @@ import javax.persistence.*;
 @Entity
 public class Tag2Post {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
 
-    private Post post;
+    @Column(name = "post_id")
+    private int postId;
 
 
-    private Tag tag;
+    @Column(name = "tag_id")
+    private int tagId;
 }

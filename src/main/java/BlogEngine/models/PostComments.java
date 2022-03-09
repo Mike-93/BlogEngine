@@ -1,30 +1,27 @@
 package BlogEngine.models;
 
-import com.sun.istack.NotNull;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
 public class PostComments {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(name = "parent_id")
+    private int parentId;
 
-    private PostComments postComments;
+    @Column(name = "post_id")
+    private int postId;
 
+    @Column(name = "user_id")
+    private int userId;
 
-    private Post post;
-
-
-    private User user;
-
-
-    private LocalDateTime time;
-
+    private long time;
 
     private String text;
-
 }

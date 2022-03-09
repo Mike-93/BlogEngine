@@ -1,8 +1,5 @@
 package BlogEngine.models;
 
 public enum ModerationStatus {
-    NEW, ACCEPTED, DECLINED;
-
-    ModerationStatus() {
-    }
+    NEW, ACCEPTED, DECLINED
 }
