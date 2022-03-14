@@ -1,4 +1,4 @@
-package BlogEngine.controllers;
+package BlogEngine.controller;
 
 public class ApiPostController {
 }

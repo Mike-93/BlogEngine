@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-public class PostComments {
+public class PostComment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
